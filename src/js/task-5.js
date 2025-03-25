@@ -6,12 +6,20 @@ const products = [
 ];
 
 const getAllPropValues = (arr, prop) => {
-  return arr.reduce((acc, item) => {
-    if (item.hasOwnProperty(prop)) {
-      acc.push(item[prop]);
+  // arr.reduce((acc, item) => {
+  //   if (item.hasOwnProperty(prop)) {
+  //     acc.push(item[prop]);
+  //   }
+  //   return acc;
+  // }, []);
+
+  const propValues = [];
+  for (const obj of arr) {
+    if (obj.hasOwnProperty(prop)) {
+      propValues.push(obj[prop]);
     }
-    return acc;
-  }, []);
+  }
+  return propValues;
 };
 
 console.log(getAllPropValues(products, "name")); // ['Радар', 'Сканер', 'Дроїд', 'Захоплення']

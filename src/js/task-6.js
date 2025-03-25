@@ -6,8 +6,15 @@ const products = [
 ];
 
 const calculateTotalPrice = (allProdcuts, productName) => {
-  const product = allProdcuts.find((item) => item.name === productName);
-  return product ? product.price * product.quantity : 0;
+  // Альтернатива
+  // const product = allProdcuts.find((item) => item.name === productName);
+  // return product ? product.price * product.quantity : 0;
+
+  for (const product of allProdcuts) {
+    if (product.name === productName) {
+      return product ? product.price * product.quantity : 0;
+    }
+  }
 };
 
 console.log(calculateTotalPrice(products, "Радар")); // 5200
