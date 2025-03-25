@@ -6,13 +6,6 @@ const products = [
 ];
 
 const getAllPropValues = (arr, prop) => {
-  // arr.reduce((acc, item) => {
-  //   if (item.hasOwnProperty(prop)) {
-  //     acc.push(item[prop]);
-  //   }
-  //   return acc;
-  // }, []);
-
   const propValues = [];
   for (const obj of arr) {
     if (obj.hasOwnProperty(prop)) {
